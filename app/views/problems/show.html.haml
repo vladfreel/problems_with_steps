@@ -1,4 +1,11 @@
 %p#notice= notice
+%h2
+  = @problem.title
+%br
+  = link_to 'New Step', new_step_path(problem: @problem.id)
+  - @problem.steps.each do |step|
+    %h3
+      = link_to step.title, edit_step_path(step.id)
 = link_to 'Edit', edit_problem_path(@problem)
 |
-\#{link_to 'Back', problems_path}
+#{link_to 'Back', problems_path}

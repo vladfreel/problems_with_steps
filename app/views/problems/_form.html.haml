@@ -8,4 +8,7 @@
         - problem.errors.full_messages.each do |message|
           %li= message
   .actions
-    = form.submit
+    .form-group
+      = form.text_field :title, placeholder: true, class: 'form-control'
+    .form-group
+      = form.submit
